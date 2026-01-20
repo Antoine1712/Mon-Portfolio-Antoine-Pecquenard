@@ -1,0 +1,248 @@
+<div id="header"></div>
+<meta charset="UTF-8">
+
+<script>
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+
+<section class="contact-page">
+    <main>
+        <h1>Contactez-Moi</h1>
+
+        <div class="contact-form-container">
+            <form action="https://formspree.io/f/mpwlddkj" method="POST"
+                  onsubmit="alert('Merci pour votre message ! Je vous répondrai dès que possible.');">
+
+                <!-- Champ anti-spam -->
+                <input type="text" name="_gotcha" style="display:none" />
+
+                <!-- Redirection après envoi -->
+                <input type="hidden" name="_redirect" value="merci.html" />
+
+                <div class="corps-formulaire">
+                    <div class="colonne gauche">
+                        <div class="groupe">
+                            <label for="prenom">Votre Prénom</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Ex : Dupont" required />
+                        </div>
+                        <div class="groupe">
+                            <label for="email">Votre E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Ex : exemple@mail.com" required />
+                        </div>
+                        <div class="groupe">
+                            <label for="telephone">Votre Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="Ex : 06 12 34 56 78" required />
+                        </div>
+                    </div>
+
+                    <div class="colonne droite">
+                        <div class="groupe">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pied-formulaire">
+                    <button type="submit">Envoyer le message</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</section>
+
+<style>
+/* ---------- Styles généraux ---------- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fef1df; /* Fond beige */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contact-page {
+    flex: 1;
+    padding: 20px 20px 40px 20px; /* réduit le padding-top de 40px à 20px */
+}
+
+.contact-page main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-page h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #043d76;
+    font-size: 2rem;
+}
+
+/* ---------- Formulaire ---------- */
+.contact-form-container form {
+    margin-top: 0; /* supprime tout espace supplémentaire au-dessus du formulaire */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.corps-formulaire {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.colonne {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Groupes d’inputs */
+.groupe {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.groupe label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #043d76;
+}
+
+.groupe input,
+.groupe textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.groupe input:focus,
+.groupe textarea:focus {
+    outline: none;
+    border-color: #043d76;
+    box-shadow: 0 0 5px rgba(4,61,118,0.3);
+}
+
+.groupe textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Bouton d’envoi */
+.pied-formulaire {
+    text-align: center;
+}
+
+.pied-formulaire button {
+    background-color: #043d76;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 250px;
+}
+
+.pied-formulaire button:hover {
+    background-color: royalblue;
+    transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .contact-page h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .corps-formulaire {
+        flex-direction: column;
+    }
+
+    .colonne {
+        width: 100%;
+    }
+
+    .pied-formulaire button {
+        max-width: 100%;
+    }
+
+    .contact-page main {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .groupe input,
+    .groupe textarea {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .pied-formulaire button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+</style>
+
+<script>
+const form = document.querySelector(".contact-page form");
+if (form) {
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+            form.reset();
+        }
+    });
+
+    form.addEventListener("submit", function (event) {
+        const prenom = document.getElementById("prenom").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telephone = document.getElementById("telephone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!prenom || !email || !telephone || !message) {
+            event.preventDefault();
+            alert("Veuillez remplir tous les champs du formulaire avant de l’envoyer.");
+        }
+    });
+}
+</script>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>

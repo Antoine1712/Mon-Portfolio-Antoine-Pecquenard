@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">Mon Portfolio</a></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formation.html">Formation</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="cv.html">Mon CV</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="stage.html">Stage</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </nav>
+</header>
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* La navbar garde sa taille naturelle */
+header {
+    flex: 0 0 auto;
+}
+
+/* L'image remplit tout l'espace restant sous la navbar */
+.home {
+    flex: 1;
+    width: 100%;
+}
+
+.home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+</style>
+
+<section class="home">
+    <img src="serveurr.2.png" alt="base de données" loading="lazy">
+</section>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>

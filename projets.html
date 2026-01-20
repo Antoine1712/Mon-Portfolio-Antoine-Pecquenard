@@ -1,0 +1,65 @@
+<div id="header"></div>
+
+<script>
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+
+<div class="iframe-fullpage">
+    <iframe src="https://www.ece.fr/faq/licence-pro-developpement-web/" frameborder="0"></iframe>
+</div>
+
+<style>
+/* Reset et page pleine largeur */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Conteneur iframe plein écran */
+.iframe-fullpage {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px); /* Hauteur totale moins navbar */
+    overflow: hidden;
+    z-index: 1; /* <-- inférieur au menu */
+}
+
+/* Iframe occupe tout l’espace du conteneur */
+.iframe-fullpage iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 1; /* <-- important */
+}
+
+/* Menu navbar */
+.navbar, .navbar-collapse { /* adapte selon tes classes */
+    position: relative; /* ou fixed si nécessaire */
+    z-index: 10; /* <-- supérieur à l'iframe */
+}
+
+/* Mobile et tablettes */
+@media (max-width: 768px) {
+    .iframe-fullpage {
+        height: calc(100vh - 50px); /* ajuste selon la navbar mobile */
+    }
+}
+</style>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>

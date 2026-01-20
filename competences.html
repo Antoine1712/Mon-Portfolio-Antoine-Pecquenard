@@ -1,0 +1,171 @@
+<div id="header"></div>
+
+<script>
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+
+<body class="competences-page">
+
+<style>
+/* ============================================
+   STYLE SPÉCIFIQUE À LA PAGE COMPÉTENCES
+============================================ */
+
+/* ---------- Contenu principal ---------- */
+
+body.competences-page, 
+html.competences-page {
+    height: 100%;
+    background-color: #222; /* noir */
+}
+.competences-page .container {
+    width: 100%;
+    background: #222;
+    display: flex;
+    flex-direction: column; /* permet d'empiler verticalement */
+    align-items: center;    /* centrer horizontalement seulement */
+    justify-content: flex-start; /* positionner en haut */
+    padding-top: 50px; /* espace pour ne pas être caché par la navbar */
+    padding-bottom: 0px;
+}
+
+
+.competences-page .skills h2 {
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* ---------- Barres de progression ---------- */
+.competences-page .progress-bar {
+    background: #959595;
+    width: 600px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.competences-page .progress-bar div {
+    height: 10px;
+    border-radius: 5px;
+    width: 0%;
+}
+
+.competences-page .progress-bar div span {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #222;
+    float: right;
+    margin-top: -15px;
+    margin-right: -20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- Couleurs & animations ---------- */
+.competences-page .html {
+    background: #e91e63;
+    animation: html-fill 1s forwards;
+    width: 90%;
+}
+.competences-page .css {
+    background: #cddc39;
+    animation: css-fill 1s forwards;
+    width: 70%;
+}
+.competences-page .php {
+    background: #e26b03;
+    animation: php-fill 1s forwards;
+    width: 60%;
+}
+.competences-page .MySQL {
+    background: #da09d7;
+    animation: MySQL-fill 1s forwards;
+    width: 60%;
+}
+.competences-page .javascript {
+    background: #00bcd4;
+    animation: javascript-fill 1s forwards;
+    width: 20%;
+}
+.competences-page .python {
+    background: #ffeb3b;
+    animation: python-fill 1s forwards;
+    width: 40%;
+}
+
+/* ---------- Animations ---------- */
+@keyframes html-fill { from { width: 0%; } to { width: 90%; } }
+@keyframes css-fill { from { width: 0%; } to { width: 70%; } }
+@keyframes php-fill { from { width: 0%; } to { width: 60%; } }
+@keyframes MySQL-fill { from { width: 0%; } to { width: 60%; } }
+@keyframes javascript-fill { from { width: 0%; } to { width: 20%; } }
+@keyframes python-fill { from { width: 0%; } to { width: 40%; } }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+    .competences-page .progress-bar {
+        width: 90%;
+    }
+
+    .competences-page .skills h2 {
+        text-align: center;
+    }
+}
+</style>
+
+<!-- Contenu principal -->
+<div class="container">
+    <div class="skills">
+        <h2>HTML</h2>
+        <div class="progress-bar">
+            <div class="html"><span>90%</span></div>
+        </div>
+
+        <h2>CSS</h2>
+        <div class="progress-bar">
+            <div class="css"><span>70%</span></div>
+        </div>
+
+        <h2>PHP</h2>
+        <div class="progress-bar">
+            <div class="php"><span>60%</span></div>
+        </div>
+
+        <h2>MySQL</h2>
+        <div class="progress-bar">
+            <div class="MySQL"><span>60%</span></div>
+        </div>
+
+        <h2>JavaScript</h2>
+        <div class="progress-bar">
+            <div class="javascript"><span>20%</span></div>
+        </div>
+
+        <h2>Python</h2>
+        <div class="progress-bar">
+            <div class="python"><span>40%</span></div>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
+
+</body>

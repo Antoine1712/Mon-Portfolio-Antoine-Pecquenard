@@ -1,0 +1,242 @@
+<!-- dans ton fichier formation.html -->
+<div id="header"></div>
+<meta charset="UTF-8">
+
+<script>
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
+
+<style>
+/* ---------- Layout global ---------- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2c3e50;
+}
+
+main {
+    flex: 1; /* permet au footer de rester en bas */
+        margin : -30px; /* Ajuste la valeur */
+
+}
+
+/* ---------- Galerie ---------- */
+.services-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 colonnes sur desktop */
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.content-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.content-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* ---------- Overlay ---------- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 61, 118, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    padding: 10px;
+}
+
+.overlay h2 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* ---------- Hover effect desktop ---------- */
+.content-item:hover .overlay {
+    opacity: 1;
+}
+.content-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ---------- Active class pour mobile ---------- */
+.content-item.active .overlay {
+    opacity: 1;
+}
+.content-item.active img {
+    transform: scale(1.08);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .services-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 15px;
+    }
+    .overlay h2 {
+        font-size: 1.1rem;
+    }
+    .content-item img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-gallery {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+    }
+    .overlay h2 {
+        font-size: 1rem;
+    }
+    .content-item img {
+        height: 200px;
+    }
+}
+
+/* ---------- Menu mobile au-dessus ---------- */
+.navbar, .navbar-collapse { 
+    position: relative;
+    z-index: 10;
+}
+</style>
+
+<main>
+    <div class="services-gallery">
+        
+        <div class="content-item">
+            <a href="https://www.vinci-melun.org/" target="_blank">
+                <img src="leonard.jpg" alt="Léonard de Vinci">
+                <div class="overlay">
+                    <div class="link-text">
+                        <h2>Léonard de Vinci</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-item">
+            <a href="https://institutionsaintaspais.fr" target="_blank">
+                <img src="saint aspais.jpg" alt="Saint Aspais">
+                <div class="overlay">
+                    <div class="link-text">
+                        <h2>Saint Aspais</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-item">
+            <a href="https://www.mydigitalschool.com/?gad_source=1&gad_campaignid=13325099722&gclid=Cj0KCQiA5abIBhCaARIsAM3-zFWuFGvM74TcYdm3K8LVGE01li0GCwrLLe4ft21hnKqbDvOGSC4oS7QaAi2fEALw_wcB" target="_blank">
+                <img src="mydigitalschool.jpg" alt="My Digital School">
+                <div class="overlay">
+                    <div class="link-text">
+                        <h2>My Digital School</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-item">
+            <a href="https://www.onisep.fr/formation/apres-la-3-la-voie-generale-et-technologique/qu-est-ce-que-la-voie-generale-et-technologique/la-voie-technologique-en-premiere-et-en-terminale/le-bac-stmg-sciences-et-technologies-du-management-et-de-la-gestion" target="_blank">
+                <img src="BAC STMG.png" alt="Formation BAC STMG">
+                <div class="overlay">
+                    <div class="link-text">
+                        <h2>Formation BAC STMG</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-item">
+            <a href="https://enqdip.sup.adc.education.fr/bts/referentiel/BTS_ServicesInformatiquesOrganisations.pdf" target="_blank">
+                <img src="BTS SIO.png" alt="Formation BTS SIO">
+                <div class="overlay">
+                    <div class="link-text">
+                        <h2>Formation BTS SIO</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-item">
+            <a href="https://www.mydigitalschool.com/bachelor-developpeur-digital-web?gad_source=1&gad_campaignid=13325099722&gclid=Cj0KCQiA5abIBhCaARIsAM3-zFUS3NoBfrRj9keL5KngrC5DUrdVcV1DZTCzPacJqxfQb4-ZImkB7MMaAhEdEALw_wcB" target="_blank">
+                <img src="Bachelier_en_Developpement_Digital.png" alt="Formation BACHELOR DEVELOPPEMENT">
+                <div class="overlay">
+                    <div class="link-text">
+                        <h2>Formation BACHELOR DEVELOPPEMENT</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</main>
+
+<script>
+// --- Affiche le texte sur l'image quand on appuie sur mobile ---
+if (window.matchMedia("(max-width: 768px)").matches) {
+  const items = document.querySelectorAll('.content-item');
+
+  items.forEach(item => {
+    // Lorsqu'on appuie sur une image
+    item.addEventListener('click', (e) => {
+      // Si l'image n'est pas encore active, on empêche le lien de s'ouvrir
+      if (!item.classList.contains('active')) {
+        e.preventDefault();
+        // Désactive les autres overlays
+        items.forEach(i => i.classList.remove('active'));
+        // Active celui sur lequel on a cliqué
+        item.classList.add('active');
+
+        // Cache automatiquement après 3 secondes
+        setTimeout(() => {
+          item.classList.remove('active');
+        }, 3000);
+      } 
+      // Si l'image est déjà active → le deuxième appui ouvre le lien normalement
+      else {
+        item.classList.remove('active');
+      }
+    });
+  });
+}
+</script>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
