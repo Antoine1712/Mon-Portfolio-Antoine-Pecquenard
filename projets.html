@@ -7,10 +7,170 @@ fetch('header.html')
     document.getElementById('header').innerHTML = data;
   });
 </script>
+<head>
+    <meta charset="UTF-8">
+</head>
 
-<div class="iframe-fullpage">
-    <iframe src="https://www.ece.fr/faq/licence-pro-developpement-web/" frameborder="0"></iframe>
+<main class="projets-container">
+
+  <nav class="projets-menu">
+    <a href="projetss.html" class="active">BTS</a>
+    <a href="stage-1.html">STAGE 1</a>
+    <a href="stage-2.html">STAGE 2</a>
+    <a href="cdd.html">CDD</a>
+    <a href="projets-perso.html">PROJETS PERSO</a>
+    <a href="bachelor.html">BACHELOR</a>
+  </nav>
+
+  <section class="projets-content">
+    <h1>BTS</h1>
+    <p>Présentation des projets réalisés durant le BTS.</p>
+  </section>
+  <br>
+
+ <div class="projet-presentation">
+  <p>
+    Durant nos cours, on a pu apprendre différentes façons de 
+    faire un formulaire. Voici quelques exemples que j’ai pu 
+    réaliser en classe.
+  </p>
+
+  <img src="BTS-SIO-IMG-1.png" alt="IMAGE FORMULAIRE">
+
+  <br>
+
+  <img src="BTS-SIO-IMG-2.png" alt="IMAGE FORMULAIRE">
+
+  <p>
+    Après avoir vu ces formulaires, j’ai pu apprendre les 
+    différents tableaux ou en mettant des données et cela les 
+    stockait, faire la somme de nombre ou la soustraction de 
+    nombre grâce à des fonctions.
+  </p>
+
+  <p>
+    On a ensuite vu le modèle MVC (Modèle Vue Contrôleur). 
+    Voici différentes images qui illustrent ce que j’ai vu. 
+    Avec pour commencer une identification pour pouvoir entrer 
+    sur le site. Ce qui est le cas de tous les sites quand 
+    on a un compte utilisateur.
+  </p>
+
+  <img src="BTS-SIO-IMG-3.png" alt="FORMULAIRE DE CONNEXION">
+
+  <p>
+    Il y a pour ce connecter plusieurs utilisateur, il y a 
+    l’admin (administrateur) et l’utilisateur (etudiant). 
+    Ils ont tous un identifiant qui est leur adresse email 
+    et un mot de passe. Tous stockés dans la base de 
+    données du projet.
+  </p>
+
+  <img src="BTS-SIO-IMG-4.png" alt="Produit Disponible">
+
+  <p>
+    Quand l’admin se connecte, il arrive sur son espace 
+    Mon Restaurant avec une navbar qui lui permet de voir 
+    les Produits qui sont encore disponible et de pouvoir 
+    en retirer 1 par exemple.
+  </p>
+
+  <p>
+    Et il y a également la page “Réservation du Jour” ou 
+    il peut voir qui à déjà passer commande. Avec le prix, 
+    la quantité et la date.
+  </p>
+
+    <img src="BTS-SIO-IMG-5.png" alt="Les Commandes Effectuer">
+
+    <p>
+    Avec le profil utilisateur (étudiant) l’interface change, 
+    il a accès à ces réservations et aux produits disponibles. 
+    La sur la première image il voit ce qu’il a réservé.
+    </p>
+
+    <img src="BTS-SIO-IMG-6.png" alt="Commande Utilisateur">
+
+    <p>
+        Et sur cette page il peut voir ce qu'il y a comme
+        produit et peut donc en réserver.
+    </p>
+
+    <img src="BTS-SIO-IMG-7.png" alt="Produit Disponible">
+
+    <p>
+    On peut voir ducoup qu'en cliquant sur le crayon on arrive 
+    dans l’espace de réservation ou il peut choisir la quantité 
+    qu’il veut.
+    </p>
+
+    <img src="BTS-SIO-IMG-8.png" alt="Produit Choisit">
+
+    <p>
+    Et quand il clique au panier et qu’on regarde les produits de 
+    nouveau on peut voir qu'une pâte Bolognaise à été réservée et 
+    retirée des stocks disponibles.
+    </p>
+
+    <img src="BTS-SIO-IMG-9.png" alt="Produit Disponible">
+
+    <p>
+    Par la suite on a fait d’autres exercices avec le modèle mvc ou 
+    c’était nommé Entreprise et il y avait une liste de salariés qui 
+    avaient un compte et il y avait leur salaire. Un utilisateur admin 
+    qui était l’administrateur et les employés qui avait accès au compte 
+    pour connaître leur salaire.
+    </p>
+
 </div>
+
+<div class="projet-presentation">
+
+    <br>
+    <p>SERIOUS GAME :</p>
+
+    <p>Description de l’Entreprise (fictif) : KNIFE ART</p>
+    <p>
+    Notre entreprise est une entreprise basée sur de la vente et customisation 
+    de couteau en ligne dénommé Knife Art. Le nom de notre entreprise vient de 
+    son concept de customisation de couteau. Enfin nous avons choisi ce concept 
+    de produit pour notre entreprise car ce dernier nous semblait répondre à une 
+    forte demande sur le marché des objets personnalisables.
+    </p>
+
+    <p>Description du Produit :</p>
+    <p>
+    Nous avons décidé de proposer un couteau a modèle unique qui
+    aura différents modèles personnalisables sur la lame et le manche.
+    Pour ce faire les clients pourront sélectionner les différents modèles
+    sur le site directement.
+    </p>
+
+    <p>Equipe :</p>
+    <p>
+    Il y avait le dirigeant et les 2 pôles de l'entreprise, d’un côté le 
+    côté management (DAF) et de l’autre le côté informatique (DEV).
+    Voici un diagramme ci-dessous des personnes présentes dans cette équipe.
+    </p>
+
+    <img src="SERIOUS_GAME-IMG-1.png" alt="Diagramme Groupe">
+
+    <p>Panier :</p>
+    <p>
+        Voici un panier qui à été effectué pour commander les matériaux pour 
+        avoir les ressources nécessaires pour réaliser les couteaux présents 
+        sur notre site internet.
+    </p>
+
+    <img src="SERIOUS_GAME-IMG-2.png" alt="Diagramme Groupe">
+</div>
+
+
+</main>
+
+<button id="scrollTopBtn" aria-label="Retour en haut">
+  ↑
+</button>
 
 <style>
 /* Reset et page pleine largeur */
@@ -52,7 +212,98 @@ html, body {
         height: calc(100vh - 50px); /* ajuste selon la navbar mobile */
     }
 }
+
+.projets-container {
+    padding: 2rem;
+}
+
+.projets-menu {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.projets-menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+}
+
+.projets-menu a:hover {
+    color: #007bff;
+}
+
+.projets-menu a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff;
+}
+
+.projet-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 2rem;
+}
+
+.projet-presentation p {
+    max-width: 800px;
+    text-align: left;
+}
+
+.projet-presentation img {
+    max-width: 70%;
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3;
+}
 </style>
+
+<script>
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
 
 <div id="footer"></div>
 
