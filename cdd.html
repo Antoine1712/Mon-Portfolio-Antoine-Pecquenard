@@ -1,0 +1,174 @@
+<div id="header"></div>
+
+<script>
+fetch('header.html')
+  .then(r => r.text())
+  .then(data => document.getElementById('header').innerHTML = data);
+</script>
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<main class="projets-container">
+
+  <nav class="projets-menu">
+    <a href="projetss.html">BTS</a>
+    <a href="stage-1.html">STAGE 1</a>
+    <a href="stage-2.html">STAGE 2</a>
+    <a href="cdd.html" class="active">CDD</a>
+    <a href="projets-perso.html">PROJETS PERSO</a>
+    <a href="bachelor.html">BACHELOR</a>
+  </nav>
+
+  <section class="projets-content">
+    <h1>CDD : Adeisse</h1>
+    <p>Présentation des projets réalisés durant mon CDD.</p>
+  </section>
+  <br>
+
+  <div class="projet-presentation">
+  <p>
+    Durant les 2 mois de CDD chez Adeisse j’ai pu développer l’interface 
+    entre le logiciel Campus et la société intermédiaire TX2 qui est spécialisée 
+    en codage/décodage EDI.
+  </p>
+
+  <p>
+    Pendant cette période j’ai pu travailler sur l’outil qui permettait de traduire 
+    les devis qui était fourni par la machine de logistique de façon claire pour qu’il 
+    y ai un devis qui soit compréhensible par une personne humaine.
+  </p>
+
+  <p>
+    Ce travail reste donc la suite logique que j’avais fait lors de mon stage en Janvier/Février 
+    2024. Le fait de créer un outil qui traduit d’un langage à un autre. 
+    (langage machine à langage français).
+  </p>
+
+  <img src="Adeisse-Screen.png" alt="Adeisse">
+
+  <p>Lien du site : https://www.adeisse.fr/</p>
+
+</div>
+
+
+<button id="scrollTopBtn" aria-label="Retour en haut">
+  ↑
+</button>
+
+</main>
+
+<div id="footer"></div>
+
+<style>
+    .projets-container {
+    padding: 2rem;
+}
+
+.projets-menu {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.projets-menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+}
+
+.projets-menu a:hover {
+    color: #007bff;
+}
+
+.projets-menu a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff;
+}
+
+.projet-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 2rem;
+}
+
+.projet-presentation p {
+    max-width: 800px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.projet-presentation img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .projet-presentation img {
+        max-width: 100%;
+    }
+}
+
+.projet-presentation {
+    margin-bottom: 4rem;
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* caché au départ */
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3;
+}
+</style>
+
+<script>
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+<script>
+fetch('footer.html')
+  .then(r => r.text())
+  .then(data => document.getElementById('footer').innerHTML = data);
+</script>
